@@ -1,7 +1,0 @@
-
-G	java:S106"+Replace this use of System.out by a logger.(¥ÊÇ¦8ÂåÿÈÆ1
-G	java:S106"+Replace this use of System.out by a logger.(äüßí8ÃåÿÈÆ1
-G	java:S106"+Replace this use of System.out by a logger.(¤‰¡Œ8ÃåÿÈÆ1
-L	java:S106 "+Replace this use of System.out by a logger.(¿ıÕïûÿÿÿÿ8ÄåÿÈÆ1
-O
-java:S1068"-Remove this unused "statement" private field.(„£„÷øÿÿÿÿ8ĞåÿÈÆ1
