@@ -5,25 +5,31 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Database {
+public final class Database {
 
-    private static Connection connection;
+    private Connection connection;
+    private static Database instance;
     private Database() {
 
     }
 
 
-    public static Connection getInstance() {
-            if (connection == null) {
+    public static Database getInstance() {
+            if (instance == null) {
                 try {
-                    connection = DriverManager.getConnection("jdbc:h2:./database","sa", "");
+                    instance = new Database();
+                    instance.connection = DriverManager.getConnection("jdbc:h2:./database","sa", "");
                 } catch ( SQLException e) {
                     e.printStackTrace();
 
                 }
             }
-            return connection;
+            return instance;
         }
+
+    public Connection getConnection(){
+        return connection;
     }
+}
 
 

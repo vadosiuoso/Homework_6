@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public class DatabaseQueryService {
-    private static final Connection CONNECTION = Database.getInstance();
+    private static final Connection CONNECTION = Database.getInstance().getConnection();
     private Statement statement;
     public static void main(String[] args) throws SQLException {
 
@@ -32,6 +32,10 @@ public class DatabaseQueryService {
             System.out.println(workers);
         }
 
+        List<ProjectPrices> projectPricesList = countProjectPrices();
+        for (ProjectPrices prices: projectPricesList) {
+            System.out.println(prices);
+        }
         CONNECTION.close();
     }
 
@@ -91,6 +95,22 @@ public class DatabaseQueryService {
                 String youngestOldest = resultSet.getString(1);
                 Date birthday = resultSet.getDate("Birthday");
                 result.add(new YoungestOldestWorkers(youngestOldest, birthday));
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public static List<ProjectPrices> countProjectPrices(){
+        List<ProjectPrices> result = new ArrayList<>();
+        try(Statement statement = CONNECTION.createStatement()){
+            String query = ReadSQL.readSqlFile("sql/print_project_prices.sql");
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                int projectId = resultSet.getInt(1);
+                int price = resultSet.getInt(2);
+                result.add(new ProjectPrices(projectId, price));
             }
         }catch (SQLException e){
             e.printStackTrace();

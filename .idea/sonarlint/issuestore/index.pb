@@ -78,3 +78,7 @@ G.idea/sonarlint/issuestore/9/6/96f19cbf46baf5fde9450aaed4d22b3e4ea3788f,e\9\e9
 Q.idea/sonarlint/securityhotspotstore/5/5/55415c1cc77fd81f00e896e78401b228a39de7cd,7\e\7e5317aabe73f51333e8fcb002ef64314c2623d4
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
+A
+database.trace.db,6\2\62c8f4b85032b362296f1e6613d39162f7aa3152
+\
+,src/main/java/org/example/ProjectPrices.java,1\c\1c192192aabd54663f64e773669d1084a3827c1c

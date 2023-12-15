@@ -11,7 +11,7 @@ public class DatabaseInitService {
 
     public static void main(String[] args) {
         try {
-            Connection connection = Database.getInstance();
+            Connection connection = Database.getInstance().getConnection();
             Statement statement = connection.createStatement();
             String query = ReadSQL.readSqlFile("sql/init_db.sql");
             int num = statement.executeUpdate(query);
