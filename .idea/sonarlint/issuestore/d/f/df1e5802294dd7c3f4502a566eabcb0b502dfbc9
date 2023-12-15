@@ -1,8 +1,0 @@
-
-i
-java:S2095"GUse try-with-resources or close this "Statement" in a "finally" clause.(é°Áµşÿÿÿÿ8³îûÆ1
-L	java:S106"+Replace this use of System.out by a logger.(í Âõøÿÿÿÿ8çıÓÇÆ1
-@
-java:S1128"$Remove this unused import 'java.io'.(¬›ãD8·îûÆ1
-B
-java:S1128"%Remove this unused import 'java.sql'.(´İ…Å8·îûÆ1
