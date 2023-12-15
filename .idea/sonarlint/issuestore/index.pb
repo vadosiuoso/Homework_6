@@ -38,10 +38,6 @@ L
 sql/find_longest_project.sql,f\c\fce380f832eb32abb1b550a197fde46b72f935eb
 ]
 -src/main/java/org/example/LongestProject.java,7\7\778366c5982f34363e4005d8400d6afcce7f96be
-d
-4src/main/java/org/example/YoungestEldestWorkers.java,f\3\f32b372dd008b4db95e03a084d2257ae7215f087
-A
-database.trace.db,6\2\62c8f4b85032b362296f1e6613d39162f7aa3152
 L
 sql/print_project_prices.sql,f\4\f4522ca3422810be68544270f5af72284bdae6a2
 d
