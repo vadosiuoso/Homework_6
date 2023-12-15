@@ -1,0 +1,18 @@
+[33mcommit f08d36c369d52d3912a657778d04a2c91be64541[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: vadosiuoso <trezstyle@gmail.com>
+Date:   Fri Dec 15 22:31:31 2023 +0100
+
+    Database singleton edited
+    projectprices method added
+
+[33mcommit 7487c1b8c66a483795c7f43f4902a3301ca6dad6[m
+Author: vadosiuoso <trezstyle@gmail.com>
+Date:   Fri Dec 15 13:33:38 2023 +0100
+
+    init commit 2
+
+[33mcommit 0508137f675b58b0b324bc171fa9459d44abc8e4[m
+Author: vadosiuoso <trezstyle@gmail.com>
+Date:   Thu Dec 14 17:39:51 2023 +0100
+
+    commit init
