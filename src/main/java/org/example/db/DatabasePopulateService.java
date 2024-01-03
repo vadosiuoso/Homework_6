@@ -9,11 +9,15 @@ import org.example.model.Client;
 import org.example.model.Project;
 import org.example.model.Worker;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabasePopulateService {
     public static void main(String[] args) {
+        Connection connection = Database.getInstance().getConnection();
+
         List<Worker> workerList = new ArrayList<>();
         workerList.add(new Worker("Adam", "1987-12-05", "Senior", 6000));
         workerList.add(new Worker("Anton", "1999-10-08", "Trainee", 800));
@@ -25,7 +29,7 @@ public class DatabasePopulateService {
         workerList.add(new Worker("Igor", "1989-07-11", "Trainee", 1200));
         workerList.add(new Worker("Max", "1977-04-29", "Senior", 5600));
         workerList.add(new Worker("Hans", "1995-12-01", "Junior", 2200));
-        WorkerDao workerDao = new WorkerDao();
+        WorkerDao workerDao = new WorkerDao(connection);
         for (Worker worker: workerList) {
             workerDao.insertWorker(worker);
         }
@@ -36,7 +40,7 @@ public class DatabasePopulateService {
         clientList.add(new Client("Konstantin"));
         clientList.add(new Client("Sergii"));
         clientList.add(new Client("Anne"));
-        ClientDao clientDao = new ClientDao();
+        ClientDao clientDao = new ClientDao(connection);
         for (Client client : clientList) {
             clientDao.insertClients(client);
         }
@@ -53,7 +57,7 @@ public class DatabasePopulateService {
         projectList.add(new Project(4, "2020-05-01", "2022-12-01"));
         projectList.add(new Project(5, "2020-04-01", "2022-11-01"));
         projectList.add(new Project(5, "2021-07-01", "2022-11-01"));
-        ProjectDao projectDao = new ProjectDao();
+        ProjectDao projectDao = new ProjectDao(connection);
         for (Project project: projectList) {
             projectDao.insertProjects(project);
         }
@@ -64,9 +68,15 @@ public class DatabasePopulateService {
                 {6, 6}, {7, 7}, {8, 8}, {9, 9},
                 {10, 10}
         };
-        ProjectWorkersDao projectWorkersDao = new ProjectWorkersDao();
+        ProjectWorkersDao projectWorkersDao = new ProjectWorkersDao(connection);
         for (int[] projectWorker : projectWorkerData) {
             projectWorkersDao.insertProjectWorker(projectWorker[0], projectWorker[1]);
+        }
+
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

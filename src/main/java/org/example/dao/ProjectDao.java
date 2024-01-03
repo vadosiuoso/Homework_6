@@ -8,10 +8,14 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ProjectDao {
+    private final Connection connection;
+
+    public ProjectDao(Connection connection){
+        this.connection = connection;
+    }
     public void insertProjects(Project project) {
         String sql = "INSERT INTO project (client_id, start_date, finish_date) VALUES (?, ?, ?)";
-        try (Connection connection = Database.getInstance().getConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
                 preparedStatement.setInt(1,project.getClientId());
                 preparedStatement.setString(2,project.getStartDate());
                 preparedStatement.setString(3, project.getFinishDate());
