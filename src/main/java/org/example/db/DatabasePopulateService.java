@@ -1,10 +1,10 @@
 package org.example.db;
 
 
-import org.example.Dao.ClientDao;
-import org.example.Dao.ProjectDao;
-import org.example.Dao.ProjectWorkersDao;
-import org.example.Dao.WorkerDao;
+import org.example.dao.ClientDao;
+import org.example.dao.ProjectDao;
+import org.example.dao.ProjectWorkersDao;
+import org.example.dao.WorkerDao;
 import org.example.model.Client;
 import org.example.model.Project;
 import org.example.model.Worker;

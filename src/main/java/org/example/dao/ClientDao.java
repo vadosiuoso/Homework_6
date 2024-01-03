@@ -1,4 +1,4 @@
-package org.example.Dao;
+package org.example.dao;
 
 import org.example.db.Database;
 import org.example.model.Client;
