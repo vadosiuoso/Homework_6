@@ -1,11 +1,11 @@
-package org.example;
+package org.example.db;
 
 
-import java.io.*;
+import org.example.util.ReadSQL;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.*;
 
 public class DatabaseInitService {
 

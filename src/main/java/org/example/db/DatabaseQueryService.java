@@ -1,4 +1,7 @@
-package org.example;
+package org.example.db;
+
+import org.example.model.*;
+import org.example.util.ReadSQL;
 
 import java.sql.*;
 import java.util.ArrayList;
